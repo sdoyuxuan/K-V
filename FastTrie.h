@@ -141,6 +141,10 @@ public:
 	 * std_value_type maps a Container's ValueT to an appropriate STL type.
 	 * Basically, it maps Vector to vector, Trie or HashMap to map, Pair to pair,
 	 * and others to themselves. Just a template programming facility.
+     * 这句话的意思所
+     * std_value_type 在各个类型中被映射成相应的类型
+     * 在Vector 中std_value_type 是 std:vector<ValueT>
+     * 在map/Trie 中是 std::map<std::vector<CharT>,ValueT > 
 	 */
 	typedef ValueT std_value_type;
 
@@ -1926,7 +1930,7 @@ OutIteratorT Container<Trie<ValueT, option, CharT, SizeT> >::build(
 				}
 			}
 
-			int32_t minCharacter = (1U << 31) - 1; // max int32_t
+			int32_t minCharacter = (1U << 31) - 1; // max int32_t 将无符号1向左移动31位即有符号数的最大值
 
 			std::list<OpenNode<SubIterator> > subOpenNodes;
 
